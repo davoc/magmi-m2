@@ -24,9 +24,9 @@ class Magmi_UtilityEngine extends Magmi_Engine
      * @param string $conffile
      *            : configuration .ini filename
      */
-    public function __construct(\Magento\Framework\App\ProductMetadataInterface $productMetadata)
+    public function __construct()
     {
-        parent::__construct($productMetadata);
+        parent::__construct();
     }
 
     public function getEnabledPluginClasses($profile)

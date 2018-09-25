@@ -16,12 +16,8 @@ class Magmi_ProductImport_DataPump
     protected $_rstep = 100;
     protected $_mdpatched = false;
 
-    /**
-     * @var \Magento\Framework\App\ProductMetadataInterface 
-     */
-    protected $_productMetadata;
 
-    public function __construct(\Magento\Framework\App\ProductMetadataInterface $productMetadata)
+    public function __construct()
     {
         $this->_engine = new Magmi_ProductImportEngine();
         $this->_engine->setBuiltinPluginClasses("*datasources",
@@ -30,7 +26,6 @@ class Magmi_ProductImport_DataPump
         $this->_stats["tstart"] = microtime(true);
         // differential
         $this->_stats["tdiff"] = $this->_stats["tstart"];
-        $this->_productMetadata = $productMetadata;
     }
 
     public function setReportingStep($rstep)

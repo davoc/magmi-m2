@@ -207,6 +207,7 @@ class DBHelper
                 $this->garbageStmtCache();
                 // create new prepared statement
                 $stmt = $this->_db->prepare($sql);
+                var_dump($stmt);exit;
                 // cache prepare statement
                 $this->prepared[$sql] = array($stmt,1);
             } else {

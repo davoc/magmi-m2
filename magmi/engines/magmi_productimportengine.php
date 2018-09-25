@@ -2,6 +2,8 @@
 
 namespace Magmi\Engines;
 
+use Magmi\Inc\Magmi_Engine;
+
 /**
  * MAGENTO MASS IMPORTER CLASS
  *
@@ -79,9 +81,9 @@ class Magmi_ProductImportEngine extends Magmi_Engine
      * Constructor
      * add default attribute processor
      */
-    public function __construct(\Magento\Framework\App\ProductMetadataInterface $productMetadata)
+    public function __construct()
     {
-        parent::__construct($productMetadata);
+        parent::__construct();
         $this->setBuiltinPluginClasses("itemprocessors", MAGMI_PLUGIN_DIR . '/inc/magmi_defaultattributehandler.php::Magmi_DefaultAttributeItemProcessor');
         
     }

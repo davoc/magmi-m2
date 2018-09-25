@@ -2,12 +2,12 @@
 
 namespace Magmi\Inc;
 
-use DBHelper;
-use Magmi_Config;
-use Magmi_Version;
+use Magmi\Inc\DBHelper;
+use Magmi\Inc\Magmi_Config;
+use Magmi\Inc\Magmi_Version;
 use Magmi_Utils;
-use Magmi_StateManager;
-use Magmi_PluginHelper;
+use Magmi\Inc\Magmi_StateManager;
+use Magmi\Inc\Magmi_PluginHelper;
 
 /**
  * This class is the mother class for magmi engines
@@ -34,13 +34,6 @@ abstract class Magmi_Engine extends DbHelper
     protected $_timingcats = array();
 
     /**
-     * Undocumented variable
-     *
-     * @var \Magento\Framework\App\ProductMetadataInterface 
-     */
-    protected $_productMetadata;
-
-    /**
      * Engine Metadata Table access
      */
     public function getEngineInfo()
@@ -51,11 +44,8 @@ abstract class Magmi_Engine extends DbHelper
     /**
      * Constructor
      */
-    public function __construct(
-        \Magento\Framework\App\ProductMetadataInterface $productMetadata
-    )
+    public function __construct()
     {
-        $this->_productMetadata = $productMetadata;
         parent::__construct();
         // force PHP internal encoding as UTF 8
         mb_internal_encoding("UTF-8");
@@ -98,7 +88,10 @@ abstract class Magmi_Engine extends DbHelper
      */
     public function getMagentoVersion()
     {
-        return $this->_productMetadata->getVersion();
+        $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+        $productMetadata = $objectManager->get('Magento\Framework\App\ProductMetadataInterface');
+        $version = $productMetadata->getVersion();
+        return $version;
     }
 
     /**
