@@ -1,5 +1,7 @@
 <?php
 
+namespace Magmi\Integration\Inc;
+
 /**
  * This is a fake datasource for datapump, it just does nothing ;)
  * @author dweeves

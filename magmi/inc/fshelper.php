@@ -1,5 +1,8 @@
 <?php
-require_once('remotefilegetter.php');
+
+namespace Magmi\Inc;
+
+use RemoteFileGetter;
 
 /**
  * Class FSHelper

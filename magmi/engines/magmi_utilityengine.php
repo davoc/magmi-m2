@@ -1,5 +1,7 @@
 <?php
 
+namespace Magmi\Engines;
+
 /**
  * MAGENTO MASS IMPORTER CLASS
  *
@@ -10,8 +12,8 @@
  */
 
 /* use external file for db helper */
-require_once("magmi_engine.php");
-require_once("magmi_pluginhelper.php");
+use Magmi_Engine;
+use Magmi_PluginHelper;
 
 /* Magmi ProductImporter is now a Magmi_Engine instance */
 class Magmi_UtilityEngine extends Magmi_Engine
@@ -22,9 +24,9 @@ class Magmi_UtilityEngine extends Magmi_Engine
      * @param string $conffile
      *            : configuration .ini filename
      */
-    public function __construct()
+    public function __construct(\Magento\Framework\App\ProductMetadataInterface $productMetadata)
     {
-        parent::__construct();
+        parent::__construct($productMetadata);
     }
 
     public function getEnabledPluginClasses($profile)

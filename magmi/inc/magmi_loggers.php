@@ -1,5 +1,7 @@
 <?php
 
+namespace Magmi\Inc;
+
 abstract class Magmi_Logger
 {
     abstract public function log($data, $type = null);

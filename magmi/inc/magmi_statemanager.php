@@ -1,4 +1,7 @@
 <?php
+
+namespace Magmi\Inc;
+
 if (!defined("DIRSEP")) {
     define("DIRSEP", DIRECTORY_SEPARATOR);
 }

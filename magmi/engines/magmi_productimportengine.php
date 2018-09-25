@@ -1,5 +1,7 @@
 <?php
 
+namespace Magmi\Engines;
+
 /**
  * MAGENTO MASS IMPORTER CLASS
  *
@@ -77,10 +79,11 @@ class Magmi_ProductImportEngine extends Magmi_Engine
      * Constructor
      * add default attribute processor
      */
-    public function __construct()
+    public function __construct(\Magento\Framework\App\ProductMetadataInterface $productMetadata)
     {
-        parent::__construct();
+        parent::__construct($productMetadata);
         $this->setBuiltinPluginClasses("itemprocessors", MAGMI_PLUGIN_DIR . '/inc/magmi_defaultattributehandler.php::Magmi_DefaultAttributeItemProcessor');
+        
     }
 
     public function getSkuStats()

@@ -1,4 +1,7 @@
 <?php
+
+namespace Magmi\Inc;
+
 /**
  *
  * This class is a Database Operation Helper based on PDO library
@@ -6,7 +9,7 @@
  * @author dweeves
  *
  */
-include_once("timecounter.php");
+use Magmi\Inc\Timecounter;
 
 class DBHelper
 {

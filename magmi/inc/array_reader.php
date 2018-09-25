@@ -1,5 +1,7 @@
 <?php
 
+namespace Magmi\Inc;
+
 /**
  * <p>This class can replace a CSVReader as a datasource for the updateGeneric() function of AttributeSetImporter,
  * it simply does not read data from a CSV file but from an array.</p>

@@ -1,14 +1,17 @@
 <?php
+
+namespace Magmi\Inc;
+
 if (!defined("DIRSEP"))
 {
     define("DIRSEP", DIRECTORY_SEPARATOR);
 }
 
-class FileNotFoundException extends Exception
+class FileNotFoundException extends \Exception
 {
 }
 
-class InvalidPropertiesException extends Exception
+class InvalidPropertiesException extends \Exception
 {
 }
 
@@ -73,7 +76,7 @@ class Properties
                     $this->_props[$sec][$k] = $newv;
                 }
             }
-        } catch (Exception $e)
+        } catch (\Exception $e)
         {
             throw new InvalidPropertiesException();
         }

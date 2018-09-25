@@ -1,5 +1,7 @@
 <?php
 
+namespace Magmi\Inc;
+
 abstract class RemoteFileGetter
 {
     protected $_errors;

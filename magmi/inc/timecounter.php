@@ -1,5 +1,7 @@
 <?php
 
+namespace Magmi\Inc;
+
 /**
  * Time counter class
  * This class provides a way to measure :
@@ -30,7 +32,7 @@
  *
  * sources are tags. categories are more like containers
  */
-class timecounter
+class Timecounter
 {
     protected $_timingcats = array();
     protected $_defaultsrc = "";

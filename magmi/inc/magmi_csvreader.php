@@ -1,6 +1,9 @@
 <?php
-require_once("magmi_mixin.php");
-require_once("magmi_utils.php");
+
+namespace Magmi\Inc;
+
+use Magmi_Mixin;
+use Magmi_Utils;
 
 class Magmi_CSVException extends Exception
 {

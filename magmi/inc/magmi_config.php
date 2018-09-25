@@ -1,5 +1,8 @@
 <?php
-require_once("properties.php");
+
+namespace Magmi\Inc;
+
+use Properties;
 
 /**
  * Directory based configuration object

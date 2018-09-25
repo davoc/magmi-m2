@@ -1,5 +1,8 @@
 <?php
-require_once("magmi_productimportengine.php");
+
+namespace Magmi\Integration\Inc;
+
+use Magmi\Engines\Magmi_ProductImportEngine;
 
 class Magmi_ProductImport_DataPump
 {
@@ -13,7 +16,12 @@ class Magmi_ProductImport_DataPump
     protected $_rstep = 100;
     protected $_mdpatched = false;
 
-    public function __construct()
+    /**
+     * @var \Magento\Framework\App\ProductMetadataInterface 
+     */
+    protected $_productMetadata;
+
+    public function __construct(\Magento\Framework\App\ProductMetadataInterface $productMetadata)
     {
         $this->_engine = new Magmi_ProductImportEngine();
         $this->_engine->setBuiltinPluginClasses("*datasources",
@@ -22,6 +30,7 @@ class Magmi_ProductImport_DataPump
         $this->_stats["tstart"] = microtime(true);
         // differential
         $this->_stats["tdiff"] = $this->_stats["tstart"];
+        $this->_productMetadata = $productMetadata;
     }
 
     public function setReportingStep($rstep)

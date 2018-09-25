@@ -1,5 +1,7 @@
 <?php
 
+namespace Magmi\Inc;
+
 class Magmi_ValueParser
 {
     

@@ -1,4 +1,7 @@
 <?php
+
+namespace Magmi\Inc;
+
 // utilities function
 
 // return null for empty string

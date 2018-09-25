@@ -1,6 +1,8 @@
 <?php
 
-require_once("magmi_engine.php");
+namespace Magmi\Inc;
+
+use Magmi_Engine;
 
 /**
  * This class is the new authentication class for magmi

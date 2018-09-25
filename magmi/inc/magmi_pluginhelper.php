@@ -1,6 +1,9 @@
 <?php
-require_once("magmi_config.php");
-require_once("fshelper.php");
+
+namespace Magmi\Inc;
+
+use Magmi_Config;
+use FsHelper;
 
 class Magmi_PluginHelper
 {
