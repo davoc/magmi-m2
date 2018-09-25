@@ -22,3 +22,21 @@ Current version is in **beta** and tested only for import simple and configurabl
 - On the fly indexer
 - Configurable Item processor
 - Image attributes processor 
+
+## Composer Usage ##
+
+1. Copy the magmi directory into the root of your Magento 2 installation.
+
+2. Add the following to the autoload section of your composer.json:
+```
+"autoload": {
+        "psr-4": {
+            ...
+	    "Magmi\\": "magmi/"
+	    ...
+        }
+}
+```
+
+You can then create your own command line script to import and export using the Magmi engine.
+
