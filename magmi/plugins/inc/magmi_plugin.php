@@ -1,7 +1,12 @@
 <?php
+
+namespace Magmi\Plugins\Inc;
+
+use Magmi\Inc\Magmi_Config;
+use Magmi\Inc\Magmi_Mixin;
+use Magmi\Inc\ProfileBasedConfig;
+
 require_once(dirname(dirname(__DIR__))."/inc/magmi_defs.php");
-require_once("magmi_config.php");
-require_once("magmi_mixin.php");
 
 
 /**

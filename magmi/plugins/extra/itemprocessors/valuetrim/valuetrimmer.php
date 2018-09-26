@@ -1,5 +1,9 @@
 <?php
 
+namespace Magmi\Plugins\Extra\Itemprocessors\Valuetrim;
+
+use Magmi\Plugins\Inc\Magmi_ItemProcessor;
+
 /**
  * Class SampleItemProcessor
  * @author dweeves

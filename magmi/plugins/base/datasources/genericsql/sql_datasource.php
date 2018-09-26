@@ -1,17 +1,21 @@
 <?php
-require_once("dbhelper.class.php");
+
+namespace Magmi\Plugins\Base\Datasources\Genericsql;
+
+use Magmi\Inc\DBHelper;
+use Magmi\Plugins\Inc\Magmi_DataSource;
 
 class ExtDBHelper extends DBHelper
 {
     public function initDBMysql($dbname, $host, $user, $pass)
     {
-        $this->_db = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8", $user, $pass);
+        $this->_db = new \PDO("mysql:host=$host;dbname=$dbname;charset=utf8", $user, $pass);
     }
 
     public function initDBPDOStr($user, $pass, $pdostr)
     {
         // fix by Mr Lei for UTF8 special chars
-        $this->_db = new PDO("$pdostr", $user, $pass);
+        $this->_db = new \PDO("$pdostr", $user, $pass);
     }
 }
 

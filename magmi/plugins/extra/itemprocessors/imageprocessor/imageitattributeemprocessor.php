@@ -1,5 +1,9 @@
 <?php
 
+namespace Magmi\Plugins\Extra\Itemprocessors\Imageprocessor;
+
+use Magmi\Plugins\Inc\Magmi_ItemProcessor;
+
 class ImageAttributeItemProcessor extends Magmi_ItemProcessor
 {
     protected $forcename = null;

@@ -1,5 +1,9 @@
 <?php
 
+namespace Magmi\Plugins\Extra\Itemprocessors\Categories;
+
+use Magmi\Plugins\Inc\Magmi_ItemProcessor;
+
 class CategoryImporter extends Magmi_ItemProcessor
 {
     // Store map code => id

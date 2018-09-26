@@ -2,10 +2,10 @@
 
 namespace Magmi\Inc;
 
-use Magmi_Mixin;
-use Magmi_Utils;
+use Magmi\Inc\Magmi_Mixin;
+use Magmi\Inc\Magmi_Utils;
 
-class Magmi_CSVException extends Exception
+class Magmi_CSVException extends \Exception
 {
 }
 

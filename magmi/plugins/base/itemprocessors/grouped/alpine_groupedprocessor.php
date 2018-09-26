@@ -1,5 +1,9 @@
 <?php
 
+namespace Magmi\Plugins\Base\Itemprocessors\Grouped;
+
+use Magmi\Plugins\Inc\Magmi_ItemProcessor;
+
 /**
  * The MIT License (MIT)
  * Copyright (c) 2012 Alpine Consulting, Inc

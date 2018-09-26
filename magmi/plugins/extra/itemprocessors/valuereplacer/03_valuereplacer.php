@@ -1,5 +1,8 @@
 <?php
 
+namespace Magmi\Plugins\Extra\Itemprocessors\Valuereplacer;
+
+use Magmi\Plugins\Inc\Magmi_ItemProcessor;
 /**
  * Class SampleItemProcessor
  * @author dweeves

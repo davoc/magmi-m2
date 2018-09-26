@@ -2,6 +2,8 @@
 
 namespace Magmi\Integration\Inc;
 
+use Magmi\Plugins\Inc\Magmi_DataSource;
+
 /**
  * This is a fake datasource for datapump, it just does nothing ;)
  * @author dweeves

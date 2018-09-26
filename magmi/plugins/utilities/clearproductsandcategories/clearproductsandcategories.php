@@ -1,5 +1,9 @@
 <?php
 
+namespace Magmi\Plugins\Utilities\Clearproductsandcategories;
+
+use Magmi\Plugins\Inc\Magmi_UtilityPlugin;
+
 class ClearProductandcategoryUtility extends Magmi_UtilityPlugin
 {
     public function getPluginInfo()

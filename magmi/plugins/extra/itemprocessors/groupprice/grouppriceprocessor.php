@@ -1,5 +1,9 @@
 <?php
 
+namespace Magmi\Plugins\Extra\Itemprocessors\Groupprice;
+
+use Magmi\Plugins\Inc\Magmi_ItemProcessor;
+
 /**
  * Import group prices for columns names called "group_price:"
  */

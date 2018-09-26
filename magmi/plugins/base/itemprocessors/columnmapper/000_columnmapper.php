@@ -1,5 +1,9 @@
 <?php
 
+namespace Magmi\Plugins\Base\Itemprocessors\Columnmapper;
+
+use Magmi\Plugins\Inc\Magmi_ItemProcessor;
+
 /**
  * Class SampleItemProcessor
  * @author dweeves

@@ -2,7 +2,7 @@
 
 namespace Magmi\Inc;
 
-use Properties;
+use Magmi\Inc\Properties;
 
 /**
  * Directory based configuration object

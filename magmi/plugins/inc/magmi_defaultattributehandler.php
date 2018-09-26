@@ -1,5 +1,10 @@
 <?php
 
+namespace Magmi\Plugins\Inc;
+
+use Magmi\Inc\Magmi_Utils;
+use Magmi\Inc\Magmi_Config;
+
 class Magmi_DefaultAttributeItemProcessor extends Magmi_ItemProcessor
 {
     protected $_basecols = array("store"=>"admin","type"=>"simple");
@@ -153,7 +158,8 @@ class Magmi_DefaultAttributeItemProcessor extends Magmi_ItemProcessor
         }
         // force convert decimal separator to dot
         $ivalue = str_replace(",", ".", $ivalue);
-        $ovalue = deleteifempty($ivalue);
+        $utils = new Magmi_Utils();
+        $ovalue = $utils->deleteifempty($ivalue);
         return $ovalue;
     }
 
@@ -180,7 +186,8 @@ class Magmi_DefaultAttributeItemProcessor extends Magmi_ItemProcessor
         if ($dval !== null) {
             return $dval;
         }
-        $ovalue = deleteifempty(trim($ivalue));
+        $utils = new Magmi_Utils();
+        $ovalue = $utils->deleteifempty(trim($ivalue));
         // Handle european date format or other common separators
         if (preg_match("|(\d{1,2})\D(\d{1,2})\D(\d{4})\s*(\d{2}:\d{2}:\d{2})?|", $ovalue, $matches)) {
             $hms = count($matches) > 4 ? $matches[4] : "";
@@ -212,7 +219,8 @@ class Magmi_DefaultAttributeItemProcessor extends Magmi_ItemProcessor
         if ($dval !== null) {
             return $dval;
         }
-        $ovalue = deleteifempty($ivalue);
+        $utils = new Magmi_Utils();
+        $ovalue = $utils->deleteifempty($ivalue);
         $attid = $attrdesc["attribute_id"];
          // --- ExtensionsMall multiselect 1.9.3 varchar -> text ----
         if ($attrdesc["frontend_input"] == "multiselect") {

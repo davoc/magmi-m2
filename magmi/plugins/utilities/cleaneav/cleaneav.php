@@ -1,5 +1,9 @@
 <?php
 
+namespace Magmi\Plugins\Utilities\Cleaneav;
+
+use Magmi\Plugins\Inc\Magmi_UtilityPlugin;
+
 class cleaneav extends Magmi_UtilityPlugin
 {
     public function getPluginInfo()

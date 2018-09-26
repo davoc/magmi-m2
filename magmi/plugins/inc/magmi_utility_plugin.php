@@ -1,5 +1,7 @@
 <?php
 
+namespace Magmi\Plugins\Inc;
+
 class Magmi_UtilityPlugin extends Magmi_Plugin
 {
     public function runUtility()

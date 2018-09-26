@@ -1,5 +1,9 @@
 <?php
-require_once(MAGMI_INCDIR."/magmi_valueparser.php");
+
+namespace Magmi\Plugins\Extra\Datasources\Itemgenerator;
+
+use Magmi\Inc\Magmi_ValueParser;
+use Magmi\Plugins\Inc\Magmi_DataSource;
 
 class Magmi_ItemGenerator extends Magmi_DataSource
 {

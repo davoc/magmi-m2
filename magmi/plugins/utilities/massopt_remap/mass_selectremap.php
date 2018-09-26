@@ -1,5 +1,9 @@
 <?php
-require_once("magmi_csvreader.php");
+
+namespace Magmi\Plugins\Utilities\Massopt_remap;
+
+use Magmi\Plugins\Inc\Magmi_UtilityPlugin;
+use Magmi\Inc\Magmi_CSVReader;
 
 class MassOptionRemapper extends Magmi_UtilityPlugin
 {

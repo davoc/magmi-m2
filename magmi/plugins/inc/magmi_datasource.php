@@ -1,4 +1,7 @@
 <?php
+
+namespace Magmi\Plugins\Inc;
+
 /**
  * Class Magmi_Datasource
  * @author dweeves

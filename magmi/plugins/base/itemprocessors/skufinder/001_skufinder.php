@@ -1,5 +1,9 @@
 <?php
 
+namespace Magmi\Plugins\Base\Itemprocessors\Skufinder;
+
+use Magmi\Plugins\Inc\Magmi_ItemProcessor;
+
 class SkuFinderItemProcessor extends Magmi_ItemProcessor
 {
     private $_compchecked = false;

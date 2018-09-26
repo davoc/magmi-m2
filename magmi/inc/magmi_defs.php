@@ -13,3 +13,6 @@ set_include_path(
 //force UTC date
          date_default_timezone_set("UTC");
 require_once('magmi_loggers.php');
+
+class Magmi_Defs 
+{}

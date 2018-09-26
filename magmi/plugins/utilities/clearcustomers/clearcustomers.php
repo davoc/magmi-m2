@@ -1,5 +1,9 @@
 <?php
 
+namespace Magmi\Plugins\Utilities\Clearcustomers;
+
+use Magmi\Plugins\Inc\Magmi_UtilityPlugin;
+
 class ClearCustomerUtility extends Magmi_UtilityPlugin
 {
     public function getPluginInfo()

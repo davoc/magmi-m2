@@ -1,5 +1,8 @@
 <?php
 
+namespace Magmi\Plugins\Extra\Itemprocessors\Attributedeleter;
+
+use Magmi\Plugins\Inc\Magmi_ItemProcessor;
 /**
  * The MIT License (MIT)
  * Copyright (c) 2014 Limora Oldtimer GmbH & Co. KG

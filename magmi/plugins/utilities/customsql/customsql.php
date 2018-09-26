@@ -1,5 +1,9 @@
 <?php
 
+namespace Magmi\Plugins\Utilities\Customsql;
+
+use Magmi\Plugins\Inc\Magmi_UtilityPlugin;
+
 class CustomSQLUtility extends Magmi_UtilityPlugin
 {
     protected $_magdbh;

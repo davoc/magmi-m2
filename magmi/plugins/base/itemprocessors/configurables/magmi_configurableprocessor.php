@@ -1,5 +1,9 @@
 <?php
 
+namespace Magmi\Plugins\Base\Itemprocessors\Configurables;
+
+use Magmi\Plugins\Inc\Magmi_ItemProcessor;
+
 class Magmi_ConfigurableItemProcessor extends Magmi_ItemProcessor
 {
     private $_configurable_attrs = array();

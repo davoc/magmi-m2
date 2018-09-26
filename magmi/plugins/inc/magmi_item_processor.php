@@ -1,6 +1,8 @@
 <?php
 
-require_once("magmi_generalimport_plugin.php");
+namespace Magmi\Plugins\Inc;
+
+use Magmi\Plugins\Inc\Magmi_GeneralImportPlugin;
 
 abstract class Magmi_ItemProcessor extends Magmi_GeneralImportPlugin
 {

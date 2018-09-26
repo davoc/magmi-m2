@@ -1,5 +1,9 @@
 <?php
 
+namespace Magmi\Plugins\Garbocom\Itemprocessors\Weeetax;
+
+use Magmi\Plugins\Inc\Magmi_ItemProcessor;
+
 /**
  * Class Ecotaxe (weee tax) processor
  * @author Garbocom with dweeves help and debuging

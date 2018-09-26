@@ -1,5 +1,9 @@
 <?php
 
+namespace Magmi\Plugins\Base\Itemprocessors\Productdeleter;
+
+use Magmi\Plugins\Inc\Magmi_ItemProcessor;
+
 class productdeleter extends Magmi_ItemProcessor
 {
     public function getPluginInfo()

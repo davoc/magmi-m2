@@ -1,5 +1,9 @@
 <?php
 
+namespace Magmi\Plugins\Utilities\Clearorders;
+
+use Magmi\Plugins\Inc\Magmi_UtilityPlugin;
+
 class ClearOrdersUtility extends Magmi_UtilityPlugin
 {
     public function getPluginInfo()

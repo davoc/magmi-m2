@@ -1,5 +1,10 @@
 <?php
-require_once("magmi_csvreader.php");
+
+
+namespace Magmi\Plugins\Utilities\Cleaneav;
+
+use Magmi\Plugins\Inc\Magmi_UtilityPlugin;
+use Magmi\Inc\Magmi_CSVReader;
 
 class MassOptionAttributeValImporter extends Magmi_UtilityPlugin
 {

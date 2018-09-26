@@ -1,5 +1,9 @@
 <?php
 
+namespace Magmi\Plugins\Extra\Itemprocessors\Itemindexer;
+
+use Magmi\Plugins\Inc\Magmi_ItemProcessor;
+
 class ItemIndexer extends Magmi_ItemProcessor
 {
     protected $_toindex;

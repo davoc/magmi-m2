@@ -1,5 +1,9 @@
 <?php
 
+namespace Magmi\Plugins\Extra\Itemprocessors\Downloadable;
+
+use Magmi\Plugins\Inc\Magmi_ItemProcessor;
+
 class downloadableprocessor extends Magmi_ItemProcessor
 {
     protected $_filePath;

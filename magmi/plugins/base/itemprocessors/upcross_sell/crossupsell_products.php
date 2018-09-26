@@ -1,5 +1,9 @@
 <?php
 
+namespace Magmi\Plugins\Base\Itemprocessors\Upcross_sell;
+
+use Magmi\Plugins\Inc\Magmi_ItemProcessor;
+
 class CrossUpsellProducts extends Magmi_ItemProcessor
 {
     public function getPluginInfo()

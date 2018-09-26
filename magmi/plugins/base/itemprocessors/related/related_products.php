@@ -1,5 +1,9 @@
 <?php
 
+namespace Magmi\Plugins\Base\Itemprocessors\Related;
+
+use Magmi\Plugins\Inc\Magmi_ItemProcessor;
+
 class RelatedProducts extends Magmi_ItemProcessor
 {
     public function getPluginInfo()

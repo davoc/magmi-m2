@@ -1,5 +1,9 @@
 <?php
 
+namespace Magmi\Plugins\Base\Itemprocessors\Importlimiter;
+
+use Magmi\Plugins\Inc\Magmi_ItemProcessor;
+
 class importlimiter extends Magmi_ItemProcessor
 {
     protected $_recranges;

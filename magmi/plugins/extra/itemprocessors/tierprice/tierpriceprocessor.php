@@ -1,5 +1,9 @@
 <?php
 
+namespace Magmi\Plugins\Extra\Itemprocessors\Tierprice;
+
+use Magmi\Plugins\Inc\Magmi_ItemProcessor;
+
 /**
  * Class Tier price processor
  * @author dweeves

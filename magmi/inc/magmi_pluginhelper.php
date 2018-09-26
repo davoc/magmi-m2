@@ -4,6 +4,7 @@ namespace Magmi\Inc;
 
 use Magmi_Config;
 use FsHelper;
+use Magmi\Integration\Inc\Magmi_DatapumpDS;
 
 class Magmi_PluginHelper
 {
@@ -48,7 +49,7 @@ class Magmi_PluginHelper
     public function initPluginInfos($baseclass, $basedir = "*/*")
     {
         $candidates = glob("$this->plugin_dir/$basedir/*/*.php");
-        usort($candidates, array("Magmi_PluginHelper", "fnsort"));
+        usort($candidates, array("Magmi\Inc\Magmi_PluginHelper", "fnsort"));
         $pluginclasses = array();
         foreach ($candidates as $pcfile) {
             $dirname = dirname(substr($pcfile, strlen($this->plugin_dir)));
@@ -111,7 +112,15 @@ class Magmi_PluginHelper
         if (!isset(self::$_plugins_cache[$ptype])) {
             self::scanPlugins($ptype);
         }
+        $pluginsPaths = ['Magmi\Integration\Inc\\', 'Magmi\Plugins\Inc\\'];
+        foreach ($pluginsPaths as $path) {
+            if (class_exists($path.$pclass)) {
+                $pclass = $path.$pclass;
+                break;
+            }
+        }
         $plinst = new $pclass();
+        
 
         $plinst->pluginInit($mmi, $this->getPluginMeta($plinst), $params, ($mmi != null), $this->_profile);
         return $plinst;

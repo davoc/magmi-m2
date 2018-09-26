@@ -3,6 +3,12 @@
 namespace Magmi\Engines;
 
 use Magmi\Inc\Magmi_Engine;
+use Magmi\Inc\LocalMagentoDirHandler;
+use Magmi\Inc\Magmi_Config;
+use Magmi\Inc\Magmi_Version;
+use Magmi\Inc\Magmi_ValueParser;
+use Magmi\Inc\Magmi_StateManager;
+use Magmi\Inc\Magmi_Utils;
 
 /**
  * MAGENTO MASS IMPORTER CLASS
@@ -13,9 +19,6 @@ use Magmi\Inc\Magmi_Engine;
  *
  */
 require_once(dirname(__DIR__) . "/inc/magmi_defs.php");
-/* use external file for db helper */
-require_once("magmi_engine.php");
-require_once("magmi_valueparser.php");
 
 /**
  *
@@ -385,8 +388,9 @@ class Magmi_ProductImportEngine extends Magmi_Engine
     {
         if (!isset($this->_sid_sscope[$scodes]))
         {
+            $utils = new Magmi_Utils();
             $this->_sid_sscope[$scodes] = array();
-            $scarr = csl2arr($scodes);
+            $scarr = $utils->csl2arr($scodes);
             $qcolstr = $this->arr2values($scarr);
             $cs = $this->tablename("store");
             $sql = "SELECT csmain.store_id from $cs as csmain WHERE csmain.code IN ($qcolstr)";
@@ -411,7 +415,8 @@ class Magmi_ProductImportEngine extends Magmi_Engine
         if (!isset($this->_sid_wsscope[$scodes]))
         {
             $this->_sid_wsscope[$scodes] = array();
-            $wscarr = csl2arr($scodes);
+            $utils = new Magmi_Utils();
+            $wscarr = $utils->csl2arr($scodes);
             $qcolstr = $this->arr2values($wscarr);
             $cs = $this->tablename("store");
             $sql = "SELECT csdep.store_id FROM $cs as csmain
@@ -1329,7 +1334,8 @@ class Magmi_ProductImportEngine extends Magmi_Engine
                 $attrmap = $this->createAttributes((isset($item['row_id']) ? $item['row_id'] : $pid), $item, $attrmap, $isnew, $itemids);
             }
             while (count($attrmap) > 0);
-            if (!testempty($item, "category_ids") || (isset($item["category_reset"]) && $item["category_reset"] == 1))
+            $utils = new Magmi_Utils();
+            if (!$utils->testempty($item, "category_ids") || (isset($item["category_reset"]) && $item["category_reset"] == 1))
             {
                 // assign categories
                 $this->assignCategories($realPid, $item);
@@ -1817,7 +1823,10 @@ class Magmi_ProductImportEngine extends Magmi_Engine
 
     public function isMagicValue($v)
     {
-        return substr($v, 0, 8) == "__MAGMI_" || $v == "__NULL__";
+        if (!is_array($v)) {
+            return substr($v, 0, 8) == "__MAGMI_" || $v == "__NULL__";
+        }
+        return false;
     }
 
     /**
@@ -1848,7 +1857,8 @@ class Magmi_ProductImportEngine extends Magmi_Engine
         $data = array();
         $cdata = array();
         $ddata = array();
-        $catids = csl2arr($item["category_ids"]);
+        $utils = new Magmi_Utils();
+        $catids = $utils->csl2arr($item["category_ids"]);
 
         // find positive category assignments
 
@@ -1857,7 +1867,7 @@ class Magmi_ProductImportEngine extends Magmi_Engine
             $a = explode("::", $catdef);
             $catid = $a[0];
             $catpos = (count($a) > 1 ? $a[1] : "0");
-            $rel = getRelative($catid);
+            $rel = $utils->getRelative($catid);
             if ($rel == "-")
             {
                 $ddata[] = $catid;
@@ -1888,7 +1898,9 @@ class Magmi_ProductImportEngine extends Magmi_Engine
                 // remove invalid category entries
                 for ($i = 0; $i < $cdiff; $i++)
                 {
-                    unset($cdata[$diff[$i]]);
+                    if (array_key_exists($i, $diff)) {
+                        unset($cdata[$diff[$i]]);
+                    }
                 }
             }
 

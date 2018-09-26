@@ -1,5 +1,7 @@
 <?php
 
+namespace Magmi\Plugins\Extra\Itemprocessors\Valuereplacer\Helper;
+
 class ValueRemapper
 {
     protected static $_inst;

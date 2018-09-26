@@ -1,5 +1,9 @@
 <?php
-require_once("magmi_plugin.php");
+
+namespace Magmi\Plugins\Inc;
+
+use Magmi\Plugins\Inc\Magmi_Plugin;
+
 
 abstract class Magmi_GeneralImportPlugin extends Magmi_Plugin
 {

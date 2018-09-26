@@ -1,6 +1,10 @@
 <?php
-require_once("magmi_csvreader.php");
-require_once("fshelper.php");
+
+namespace Magmi\Plugins\Base\Datasources\Csv;
+
+use Magmi\Inc\Magmi_CSVReader;
+use Magmi\Inc\FSHelper;
+use Magmi\Plugins\Inc\Magmi_DataSource;
 
 class Magmi_CSVDataSource extends Magmi_Datasource
 {

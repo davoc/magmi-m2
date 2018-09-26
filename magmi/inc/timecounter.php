@@ -32,7 +32,7 @@ namespace Magmi\Inc;
  *
  * sources are tags. categories are more like containers
  */
-class Timecounter
+class TimeCounter
 {
     protected $_timingcats = array();
     protected $_defaultsrc = "";

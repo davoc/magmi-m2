@@ -525,7 +525,7 @@ abstract class Magmi_Engine extends DbHelper
             }
             $this->initDb($host, $dbname, $user, $pass, $port, $socket, $conn, $debug);
             // suggested by pastanislas
-            $this->_db->setAttribute(PDO::MYSQL_ATTR_USE_BUFFERED_QUERY, true);
+            $this->_db->setAttribute(\PDO::MYSQL_ATTR_USE_BUFFERED_QUERY, true);
         }
     }
     /*

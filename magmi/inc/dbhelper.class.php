@@ -9,7 +9,7 @@ namespace Magmi\Inc;
  * @author dweeves
  *
  */
-use Magmi\Inc\Timecounter;
+use Magmi\Inc\TimeCounter;
 
 class DBHelper
 {
@@ -58,11 +58,11 @@ class DBHelper
             $pdostr = "mysql:host=$host;port=$port;dbname=$dbname;charset=utf8";
         }
 
-        $this->_db = new PDO($pdostr, $user, $pass, array(PDO::MYSQL_ATTR_INIT_COMMAND=>"SET NAMES utf8"));
+        $this->_db = new \PDO($pdostr, $user, $pass, array(\PDO::MYSQL_ATTR_INIT_COMMAND=>"SET NAMES utf8"));
         // use exception error mode
-        $this->_db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        $this->_db->setAttribute(PDO::ATTR_ORACLE_NULLS, PDO::NULL_NATURAL);
-        $this->_db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
+        $this->_db->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
+        $this->_db->setAttribute(\PDO::ATTR_ORACLE_NULLS, \PDO::NULL_NATURAL);
+        $this->_db->setAttribute(\PDO::ATTR_DEFAULT_FETCH_MODE, \PDO::FETCH_ASSOC);
 
         // set database debug mode to trace if necessary
         $this->_debug = $debug;
@@ -207,7 +207,7 @@ class DBHelper
                 $this->garbageStmtCache();
                 // create new prepared statement
                 $stmt = $this->_db->prepare($sql);
-                var_dump($stmt);exit;
+                
                 // cache prepare statement
                 $this->prepared[$sql] = array($stmt,1);
             } else {
@@ -296,7 +296,7 @@ class DBHelper
      *            :SELECT statement SQL (placeholders allowed)
      * @param array $params
      *            : placeholder replacements (can be null)
-     * @return PDOStatement : statement instance for further processing
+     * @return \PDOStatement : statement instance for further processing
      */
     public function select($sql, $params = null)
     {
@@ -320,7 +320,7 @@ class DBHelper
         $this->_timecounter->initTime("indb", null, $this->_tcats);
         $t0 = microtime(true);
 
-        $r = $stmt->fetch(PDO::FETCH_ASSOC);
+        $r = $stmt->fetch(\PDO::FETCH_ASSOC);
         $stmt->closeCursor();
         $this->_timecounter->exitTime("indb", null, $this->_tcats);
 
@@ -347,7 +347,7 @@ class DBHelper
 
         $t0 = microtime(true);
 
-        $r = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $r = $stmt->fetchAll(\PDO::FETCH_ASSOC);
         $stmt->closeCursor();
         $this->_timecounter->exitTime("indb", null, $this->_tcats);
 
